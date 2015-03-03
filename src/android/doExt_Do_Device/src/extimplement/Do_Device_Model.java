@@ -12,6 +12,7 @@ import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import core.DoServiceContainer;
 import core.object.DoSingletonModule;
+import core.helper.DoTextHelper;
 import core.helper.jsonparse.DoJsonNode;
 import core.interfaces.DoIScriptEngine;
 import core.object.DoInvokeResult;
@@ -135,8 +136,9 @@ public class Do_Device_Model extends DoSingletonModule implements Do_Device_IMet
 	@Override
 	public void vibrate(DoJsonNode _dictParas, DoIScriptEngine _scriptEngine,
 			DoInvokeResult _invokeResult) throws Exception {
+		int _duration = DoTextHelper.strToInt(_dictParas.getOneText("duration", ""), 500);
 		Vibrator _vibrator = (Vibrator) DoServiceContainer.getPageViewFactory().getAppContext().getSystemService(Context.VIBRATOR_SERVICE);
-		_vibrator.vibrate(500);
+		_vibrator.vibrate(_duration);
 	}
 
 	/**
