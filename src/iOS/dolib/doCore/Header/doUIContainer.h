@@ -18,7 +18,6 @@
 }
 #pragma mark -
 @property (nonatomic,strong) NSString* ID;
-@property (nonatomic,readonly,strong)doSourceFile  *ScriptFile;
 @property (nonatomic,readonly,assign)double  DesignWidth;
 @property (nonatomic,readonly,assign)double  DesignHeight;
 @property (assign,nonatomic,readonly)double InnerXZoom;
@@ -33,5 +32,7 @@
 - (void)UnregistChildUIModule:(NSString *)_id;
 -(doUIModule *)GetChildUIModuleByID:(NSString *)_uiid;
 - (void)LoadFromFile:(doSourceFile *)_uiFile : (NSString*) _x : (NSString*) _y;
+- (void)LoadFromContent:(NSString *)_content : (NSString*) _x : (NSString*) _y :(NSString*) _filepath;
+- (void) LoadDefalutScriptFile:(NSString *)_filePath;
 -(void) Dispose;
 @end

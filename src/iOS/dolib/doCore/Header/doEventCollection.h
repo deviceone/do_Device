@@ -19,6 +19,7 @@
 }
 #pragma mark -
 @property(strong,nonatomic)NSString* MessageID;
+@property(strong,nonatomic)NSString* EventData;//透传数据
 @property(assign,nonatomic)NSTimeInterval ResponseTimeLimit;
 
 #pragma mark -

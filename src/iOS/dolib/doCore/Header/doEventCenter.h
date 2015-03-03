@@ -21,4 +21,5 @@
 - (void) Unsubscribe: (NSString*) _messageName : (id<doIScriptEngine>) _scriptEngine;
 - (void) FireEvent: (NSString*) _messageName : (doInvokeResult*) _invokeResult;
 - (void) SetResponseTime: (NSString*) _messageName : (NSTimeInterval) _responseTime;
+- (void) SetEventData: (NSString*) _messageName : (NSString*) _eventData;
 @end

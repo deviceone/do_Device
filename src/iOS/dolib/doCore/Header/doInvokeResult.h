@@ -14,6 +14,7 @@
 @private
     doJsonNode * currentResult;
 }
+-(id) init:(NSString*) _sender;
 
 #pragma mark -
 - (void) SetResultText: (NSString *) _value;
@@ -27,5 +28,5 @@
 - (void) SetError: (NSString *) _message;
 - (void) SetException: (NSException *)_err;
 - (NSString *)GetResult;
-
+- (void) SetEventData: (NSString *) _value;
 @end

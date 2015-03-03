@@ -35,4 +35,5 @@
 - (doCallBackTask *) CreateCallBackTask:(NSString *)_callBackMethodName;
 
 -(void) CallLoadScriptsAsModel:(NSString *)_scripts : (NSString*) libname;
+-(void) CallLoadScriptsAsModelWithPreDefine:(NSString*) uiRootViewAddress :(NSString *)_scripts;
 @end

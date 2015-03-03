@@ -30,4 +30,5 @@
 +(UIImage*)imageWithImageSimple:(UIImage*)image scaledToSize:(CGSize)newSize;
 + (CGSize)sizeWithImageData:(UIImage *)image;
 + (NSString *)stringWithUUID;
++(int)GetDeviceFontSize:(int) _fontSize : (float) xzoom : (float) yzoom;
 @end
