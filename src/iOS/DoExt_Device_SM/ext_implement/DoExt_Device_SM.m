@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 DoExt. All rights reserved.
 //
 
-#import "Do_Device_SM.h"
+#import "DoExt_Device_SM.h"
 
 #import "doScriptEngineHelper.h"
 #import "doIScriptEngine.h"
@@ -17,7 +17,7 @@
 #import  <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <UIKit/UIKit.h>
 
-@implementation Do_Device_SM
+@implementation DoExt_Device_SM
 {
     BOOL isLigthOn;
     AVCaptureDevice *device;

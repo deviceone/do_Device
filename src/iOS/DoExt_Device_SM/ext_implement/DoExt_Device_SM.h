@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 DoExt. All rights reserved.
 //
 
-#import "Do_Device_ISM.h"
+#import "DoExt_Device_ISM.h"
 #import "doSingletonModule.h"
 
-@interface Do_Device_SM : doSingletonModule<Do_Device_ISM>
+@interface DoExt_Device_SM : doSingletonModule<DoExt_Device_ISM>
 
 @end

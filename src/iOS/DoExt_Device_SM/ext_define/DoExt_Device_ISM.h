@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol Do_Device_ISM <NSObject>
+@protocol DoExt_Device_ISM <NSObject>
 
 @required
 
