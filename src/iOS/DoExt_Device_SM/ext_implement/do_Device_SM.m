@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 DoExt. All rights reserved.
 //
 
-#import "DoExt_Device_SM.h"
+#import "do_Device_SM.h"
 
 #import "doScriptEngineHelper.h"
 #import "doIScriptEngine.h"
@@ -18,7 +18,7 @@
 #import <UIKit/UIKit.h>
 #import "doJsonNode.h"
 
-@implementation DoExt_Device_SM
+@implementation do_Device_SM
 {
     BOOL isLigthOn;
     AVCaptureDevice *device;

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD942F571A82197000F9673D /* DoExt_Device_SM.m in Sources */ = {isa = PBXBuildFile; fileRef = DD942F561A82197000F9673D /* DoExt_Device_SM.m */; };
+		DD942F571A82197000F9673D /* do_Device_SM.m in Sources */ = {isa = PBXBuildFile; fileRef = DD942F561A82197000F9673D /* do_Device_SM.m */; };
 		DD942F591A8219A200F9673D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD942F581A8219A200F9673D /* AVFoundation.framework */; };
 		DD942F5D1A8219B300F9673D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD942F5C1A8219B300F9673D /* AudioToolbox.framework */; };
 		DD942F5F1A8219BC00F9673D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD942F5E1A8219BC00F9673D /* CoreTelephony.framework */; };
@@ -27,9 +27,9 @@
 
 /* Begin PBXFileReference section */
 		A4E1EABD1A778F1700F0B3CE /* libDoExt_Device_SM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDoExt_Device_SM.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD942F541A82196500F9673D /* DoExt_Device_ISM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoExt_Device_ISM.h; sourceTree = "<group>"; };
-		DD942F551A82197000F9673D /* DoExt_Device_SM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoExt_Device_SM.h; sourceTree = "<group>"; };
-		DD942F561A82197000F9673D /* DoExt_Device_SM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoExt_Device_SM.m; sourceTree = "<group>"; };
+		DD942F541A82196500F9673D /* do_Device_ISM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = do_Device_ISM.h; sourceTree = "<group>"; };
+		DD942F551A82197000F9673D /* do_Device_SM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = do_Device_SM.h; sourceTree = "<group>"; };
+		DD942F561A82197000F9673D /* do_Device_SM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = do_Device_SM.m; sourceTree = "<group>"; };
 		DD942F581A8219A200F9673D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DD942F5A1A8219A400F9673D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		DD942F5C1A8219B300F9673D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -53,7 +53,7 @@
 		A4917C461A78940200FFB148 /* ext_define */ = {
 			isa = PBXGroup;
 			children = (
-				DD942F541A82196500F9673D /* DoExt_Device_ISM.h */,
+				DD942F541A82196500F9673D /* do_Device_ISM.h */,
 			);
 			path = ext_define;
 			sourceTree = "<group>";
@@ -61,8 +61,8 @@
 		A4917C481A78940200FFB148 /* ext_implement */ = {
 			isa = PBXGroup;
 			children = (
-				DD942F551A82197000F9673D /* DoExt_Device_SM.h */,
-				DD942F561A82197000F9673D /* DoExt_Device_SM.m */,
+				DD942F551A82197000F9673D /* do_Device_SM.h */,
+				DD942F561A82197000F9673D /* do_Device_SM.m */,
 			);
 			path = ext_implement;
 			sourceTree = "<group>";
@@ -144,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD942F571A82197000F9673D /* DoExt_Device_SM.m in Sources */,
+				DD942F571A82197000F9673D /* do_Device_SM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
