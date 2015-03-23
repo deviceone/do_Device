@@ -12,17 +12,18 @@ import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import core.DoServiceContainer;
 import core.object.DoSingletonModule;
+import core.helper.DoTextHelper;
 import core.helper.jsonparse.DoJsonNode;
 import core.interfaces.DoIScriptEngine;
 import core.object.DoInvokeResult;
 import extdefine.Do_Device_IMethod;
 
 /**
- * 自定义扩展API组件Model实现，继承DoSingletonModule抽象类，并实现Do_Device_IMethod接口方法；
+ * 自定义扩展SM组件Model实现，继承DoSingletonModule抽象类，并实现Do_Device_IMethod接口方法；
  * #如何调用组件自定义事件？可以通过如下方法触发事件：
  * this.model.getEventCenter().fireEvent(_messageName, jsonResult);
  * 参数解释：@_messageName字符串事件名称，@jsonResult传递事件参数对象；
- * 获取DoInvokeResult对象方式new DoInvokeResult();
+ * 获取DoInvokeResult对象方式new DoInvokeResult(this.model.getUniqueKey());
  */
 public class Do_Device_Model extends DoSingletonModule implements Do_Device_IMethod{
 
@@ -71,7 +72,7 @@ public class Do_Device_Model extends DoSingletonModule implements Do_Device_IMet
 	 * #如何执行异步方法回调？可以通过如下方法：
 	 * _scriptEngine.callback(_callbackFuncName, _invokeResult);
 	 * 参数解释：@_callbackFuncName回调函数名，@_invokeResult传递回调函数参数对象；
-	 * 获取DoInvokeResult对象方式new DoInvokeResult();
+	 * 获取DoInvokeResult对象方式new DoInvokeResult(this.model.getUniqueKey());
 	 */
 	@Override
 	public boolean invokeAsyncMethod(String _methodName, DoJsonNode _dictParas,
@@ -135,8 +136,9 @@ public class Do_Device_Model extends DoSingletonModule implements Do_Device_IMet
 	@Override
 	public void vibrate(DoJsonNode _dictParas, DoIScriptEngine _scriptEngine,
 			DoInvokeResult _invokeResult) throws Exception {
+		int _duration = DoTextHelper.strToInt(_dictParas.getOneText("duration", ""), 500);
 		Vibrator _vibrator = (Vibrator) DoServiceContainer.getPageViewFactory().getAppContext().getSystemService(Context.VIBRATOR_SERVICE);
-		_vibrator.vibrate(500);
+		_vibrator.vibrate(_duration);
 	}
 
 	/**
