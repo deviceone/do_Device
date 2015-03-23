@@ -136,7 +136,7 @@ public class do_Device_Model extends DoSingletonModule implements do_Device_IMet
 	@Override
 	public void vibrate(DoJsonNode _dictParas, DoIScriptEngine _scriptEngine,
 			DoInvokeResult _invokeResult) throws Exception {
-		int _duration = DoTextHelper.strToInt(_dictParas.getOneText("duration", ""), 500);
+		int _duration = DoTextHelper.strToInt(_dictParas.getOneText("duration", ""), 1000);
 		Vibrator _vibrator = (Vibrator) DoServiceContainer.getPageViewFactory().getAppContext().getSystemService(Context.VIBRATOR_SERVICE);
 		_vibrator.vibrate(_duration);
 	}
