@@ -16,7 +16,7 @@ import core.helper.DoTextHelper;
 import core.helper.jsonparse.DoJsonNode;
 import core.interfaces.DoIScriptEngine;
 import core.object.DoInvokeResult;
-import extdefine.Do_Device_IMethod;
+import extdefine.do_Device_IMethod;
 
 /**
  * 自定义扩展SM组件Model实现，继承DoSingletonModule抽象类，并实现Do_Device_IMethod接口方法；
@@ -25,9 +25,9 @@ import extdefine.Do_Device_IMethod;
  * 参数解释：@_messageName字符串事件名称，@jsonResult传递事件参数对象；
  * 获取DoInvokeResult对象方式new DoInvokeResult(this.model.getUniqueKey());
  */
-public class Do_Device_Model extends DoSingletonModule implements Do_Device_IMethod{
+public class do_Device_Model extends DoSingletonModule implements do_Device_IMethod{
 
-	public Do_Device_Model() throws Exception {
+	public do_Device_Model() throws Exception {
 		super();
 	}
 	
