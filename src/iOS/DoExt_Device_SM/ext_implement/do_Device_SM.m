@@ -140,7 +140,7 @@
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithObjectsAndKeys:deviceId,@"deviceId", deviceName,@"deviceName",OS,@"OS",OSVersion,@"OSVersion",dpiH,@"dpiH",dpiV,@"dpiV",screenH,@"screenH",screenV,@"screenH",resolutionH,@"resolutionH",resolutionV,@"resolutionH",phoneType,@"phoneType",communicationType,@"communicationType",sdkVersion,@"sdkVersion",nil];
     
-    if([str isEqualToString:@""] || [str isEqualToString:@"all"])
+    if([str isEqualToString:@""] || [[str lowercaseString] isEqualToString:@"all"])
     {
         for(int i = 0;i<[array count];i++)
         {
