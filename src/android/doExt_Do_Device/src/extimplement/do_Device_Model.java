@@ -2,6 +2,7 @@ package extimplement;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.media.Ringtone;
@@ -115,6 +116,7 @@ public class do_Device_Model extends DoSingletonModule implements do_Device_IMet
 				Parameters params = camera.getParameters();
 				params.setFlashMode(Parameters.FLASH_MODE_TORCH);
 				camera.setParameters(params);
+				camera.setPreviewTexture(new SurfaceTexture(0));
 				camera.startPreview(); 
 				isopen = true;
 			}
