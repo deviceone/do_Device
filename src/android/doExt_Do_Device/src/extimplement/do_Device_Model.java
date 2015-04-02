@@ -111,15 +111,20 @@ public class do_Device_Model extends DoSingletonModule implements do_Device_IMet
 				camera = Camera.open();
 			}
 			if (!isopen) {
+				// 开始亮灯。通过setFlashMode()及startPreview()两种方式确保亮灯。
 				Parameters params = camera.getParameters();
 				params.setFlashMode(Parameters.FLASH_MODE_TORCH);
 				camera.setParameters(params);
-				camera.startPreview(); // 开始亮灯
+				camera.startPreview(); 
 				isopen = true;
 			}
 		} else if (null != _status && "off".equals(_status)) {
 			if (camera != null) {
-				camera.stopPreview(); // 关掉亮灯
+				// 灭灯。通过setFlashMode()及stopPreview()两种方式确保灭灯。
+				Parameters params = camera.getParameters();
+				params.setFlashMode(Parameters.FLASH_MODE_OFF);
+                camera.setParameters(params);
+				camera.stopPreview(); 
 				camera.release(); // 关掉照相机
 				camera = null;
 				isopen = false;
