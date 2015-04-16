@@ -1,4 +1,4 @@
-package extimplement;
+package doext.implement;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,12 +12,12 @@ import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import core.DoServiceContainer;
-import core.object.DoSingletonModule;
 import core.helper.DoTextHelper;
 import core.helper.jsonparse.DoJsonNode;
 import core.interfaces.DoIScriptEngine;
 import core.object.DoInvokeResult;
-import extdefine.do_Device_IMethod;
+import core.object.DoSingletonModule;
+import doext.define.do_Device_IMethod;
 
 /**
  * 自定义扩展SM组件Model实现，继承DoSingletonModule抽象类，并实现Do_Device_IMethod接口方法；
@@ -154,7 +154,6 @@ public class do_Device_Model extends DoSingletonModule implements do_Device_IMet
 	 * @_scriptEngine 当前Page JS上下文环境对象
 	 * @_invokeResult 用于返回方法结果对象
 	 */
-	@SuppressWarnings("deprecation")
 	@Override
 	public void getInfo(DoJsonNode _dictParas, DoIScriptEngine _scriptEngine,
 			DoInvokeResult _invokeResult) throws Exception {
