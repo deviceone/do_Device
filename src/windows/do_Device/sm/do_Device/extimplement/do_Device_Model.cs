@@ -136,7 +136,7 @@ namespace do_Device.extimplement
                 //jn.SetOneText("sdkVersion", "8");
                 if (_dictParas.GetOneText("name", "") == "all" || string.IsNullOrEmpty(_dictParas.GetOneText("name", "")))
                 {
-                    _invokeResult.SetResultNode(jn);
+                    _invokeResult.SetResultText(jn.ExportToText());
                 }
                 else
                 {
