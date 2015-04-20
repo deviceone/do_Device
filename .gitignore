@@ -1,2 +1,7 @@
-
-src/android/doExt_do_Device/AndroidManifest.xml
+*.class
+*.apk
+bin/
+gen/
+.settings/
+proguard/
+*.classpath
