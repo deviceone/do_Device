@@ -16,7 +16,7 @@
 #import  <CoreTelephony/CTCarrier.h>
 #import  <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <UIKit/UIKit.h>
-#import "doJsonNode.h"
+#import "doJsonHelper.h"
 
 @implementation do_Device_SM
 {
@@ -61,8 +61,8 @@
 }
 - (void)flash:(NSArray *)parms
 {
-    doJsonNode *_dictParams = [parms objectAtIndex:0];
-    NSString *_status = [_dictParams GetOneText:@"status" :@""];
+    NSDictionary *_dictParams = [doJsonHelper GetNode:[parms objectAtIndex:0]];
+    NSString *_status = [doJsonHelper GetText:_dictParams :@"_status"];
     if([_status isEqualToString:@"on"])
     {
         if(device == nil)
@@ -91,16 +91,16 @@
 }
 - (void)getInfo:(NSArray *)parms
 {
-    doJsonNode *_dictParas = [parms objectAtIndex:0];
+    NSDictionary *_dictParas = [parms objectAtIndex:0];
     
     doInvokeResult *_invokeResult = [parms objectAtIndex:2];
     //自己的代码实现
-    NSString *str = [_dictParas GetOneText:@"name" :@""];
+    NSString *str = [doJsonHelper GetOneText:_dictParas :@"name" :@""];
     
     NSArray *array = [[NSArray alloc]initWithObjects:@"deviceId",@"deviceName",@"OS",@"OSVersion",@"dpiH",@"dpiV",@"screenH",@"screenV",@"resolutionH",@"resolutionV",@"phoneType",@"communicationType",@"sdkVersion",nil];
     //实例化一个node，用以返回
-    doJsonNode *node = [[doJsonNode alloc]init];
-    doJsonNode *node2 = [[doJsonNode alloc]init];
+    NSMutableDictionary *node = [[NSMutableDictionary alloc]init];
+    NSMutableDictionary *node2 = [[NSMutableDictionary alloc]init];
     //获取设备id
     NSString *deviceId =  [[UIDevice currentDevice].identifierForVendor UUIDString];
     //获取设备名称
@@ -144,13 +144,15 @@
     {
         for(int i = 0;i<[array count];i++)
         {
-            [node SetOneText:[array objectAtIndex:i] :[dict objectForKey:[array objectAtIndex:i]]];
+            NSString *text = ![dict objectForKey:[array objectAtIndex:i]]?@"":[dict objectForKey:[array objectAtIndex:i]];
+            [node setObject:text forKey:[array objectAtIndex:i]];
         }
         [_invokeResult SetResultNode:node];
     }
     else if([dict objectForKey:str])
     {
-        [node2 SetOneText:str :[dict objectForKey:str]];
+        NSString *text = ![dict objectForKey:str]?@"":[dict objectForKey:str];
+        [node2 setObject:text forKey:str];
         [_invokeResult SetResultNode:node2];
     }
 }
